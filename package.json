@@ -1,0 +1,9 @@
+{
+  "name": "why_not_fe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/devclub-official/why_not_fe.git",
+  "author": "mooyeon-choi <lon12080@gmail.com>",
+  "license": "MIT",
+  "packageManager": "yarn@4.9.1"
+}
