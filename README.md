@@ -56,7 +56,7 @@ pnpm build
 
 ### 초기 설정
 
-main 에서 사용할 공통 명령어를 설정해주어야함, React native의 경우 android, iOS 환경 모두 테스트해봐야 하므롤 RN에 맞춰서 설정
+main 에서 사용할 공통 명령어를 설정해주어야함, React native의 경우 android, iOS 환경 모두 테스트해봐야 하므로 RN에 맞춰서 설정
 
 #### turbo.json 설정
 
@@ -132,7 +132,7 @@ yarn android
 yarn ios
 
 # web만 실행
-pnpm dev --filter=web
+yarn dev --filter=web
 ```
 
 ### Remote Caching
