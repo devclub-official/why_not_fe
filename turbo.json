@@ -16,6 +16,12 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "ios": {
+      "dependsOn": ["^ios"]
+    },
+    "android": {
+      "dependsOn": ["^android"]
     }
   }
 }
