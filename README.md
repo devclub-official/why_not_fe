@@ -2,6 +2,18 @@
 
 이거왜안돼 팀 프론트앤드 코드
 
+## 목차
+
+- [초기 설정방법](#초기-설정방법)
+    - [Tureborepo install](#turborepo-install)
+    - [React Native install](#react-native-install)
+- [폴더 구조](#폴더-구조)
+- [개발모드 실행](#개발모드-실행)
+    - [초기 설정](#초기-설정)
+    - [개발모드 실행 방법](#개발모드-실행-방법)
+    - [오류 해결](#오류-해결)
+
+
 ## 초기 설정방법
 
 ### Turborepo install
@@ -40,7 +52,7 @@ This Turborepo includes the following packages/apps:
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### 개발모드 실행
+## 개발모드 실행
 
 ### 초기 설정
 
@@ -122,3 +134,41 @@ yarn ios
 # web만 실행
 yarn dev --filter=web
 ```
+
+### 오류 해결
+
+yarn ios 로 실행 시 `Unable to run simctl: Error:xcrun simctl help exited with non-zero code: 72` 에러 발생
+
+yarn expo start > i 를 통해 ios 시뮬레이터를 한번 이상 실행해야만 제대롤 동작하는 것을 확인
+
+아래의 추가 환경 설정이 필요함
+
+#### 방법 1: expo start 실행 후 기존 로직 진행
+
+- `cd apps/mobile && yarn start`
+
+- `i` 입력 후 ios 시뮬레이터 실행
+
+#### 방법 2: `dev` command에 `expo start` 추가
+
+- apps/mobile/package.json
+
+    ```json
+    {
+    "name": "mobile",
+    "main": "expo-router/entry",
+    "version": "1.0.0",
+    "scripts": {
+        ...
+        ////////////////////
+        // 아패 코드 입력
+        ////////////////////
+        "dev": "expo start",
+        ...
+    },
+    }
+    ```
+
+- `yarn dev`
+
+- `mobile#dev`에서 `i`입력 후 iOS 시뮬레이터 실행
