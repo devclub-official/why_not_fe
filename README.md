@@ -12,6 +12,8 @@
     - [초기 설정](#초기-설정)
     - [개발모드 실행 방법](#개발모드-실행-방법)
     - [오류 해결](#오류-해결)
+- [React Native](#react-native)
+    - [Webview 설정](#webview-설정)
 
 
 ## 초기 설정방법
@@ -172,3 +174,43 @@ yarn expo start > i 를 통해 ios 시뮬레이터를 한번 이상 실행해야
 - `yarn dev`
 
 - `mobile#dev`에서 `i`입력 후 iOS 시뮬레이터 실행
+
+## React Native
+
+### Webview 설정
+
+#### Package 설치
+
+[`react-native-webview`](https://github.com/react-native-webview/react-native-webview) 설치 필요
+
+```sh
+cd apps/mobile && yarn add react-native-webview
+```
+
+#### Environment 추가
+
+```sh
+cd apps/mobile && echo "WEBVIEW_URL=http://localhost:3000" > .env.local
+```
+
+혹은
+
+`/apps/mobile` 폴더에서 `.env.local` 파일 생성 후 `WEBVIEW_URL=http://localhost:3000` 추가
+
+#### 홈화면 적용
+
+```tsx
+import WebView from 'react-native-webview';
+
+export default function HomeScreen() {
+  return (
+    <WebView
+      source={{ uri: process.env.WEBVIEW_URL || 'http://localhost:3000' }}
+    />
+  );
+}
+```
+
+#### 주의
+
+이전에 시뮬레이션에 앱을 한번 실행했었다면 시뮬레이션 환경에서 앱 종료 후 `yarn android`, `yarn ios` or `yarn dev` 로 실행해주어야 반영됨
