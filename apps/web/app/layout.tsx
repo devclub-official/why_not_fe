@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Why Not",
@@ -12,8 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>
-        {children}
+      <body className="flex flex-col items-center min-h-screen max-w-lg mx-auto bg-white">
+        <main className="mx-auto max-w-md min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );
