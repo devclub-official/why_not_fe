@@ -11,7 +11,7 @@ on:
 
 jobs:
   lint_and_test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Lint, audit and test
     steps:
       - uses: actions/checkout@v4
@@ -25,9 +25,6 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
       
-      - name: Use Yarn 4.9.1
-        run: corepack prepare yarn@4.9.1 --activate
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
