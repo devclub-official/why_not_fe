@@ -1,6 +1,10 @@
 {
-  "name": "why-not-fe",
+  "name": "why_not_fe",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -11,16 +15,13 @@
     "android": "turbo run android"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
-    "turbo": "^2.5.2",
-    "typescript": "5.8.2"
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.3",
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "yarn@4.9.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "packageManager": "yarn@4.9.1"
 }
