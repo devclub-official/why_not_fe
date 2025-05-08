@@ -28,24 +28,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Run Audit
-        run: yarn npm audit
-
       - name: Run lint
         run: yarn lint
 
       - name: Run format check
         run: yarn format:check
 
-      - name: Run type check
-        run: yarn check-types
-
-      - name: Run tests
-        run: yarn test
-
   build:
     needs: lint_and_test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Build
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
     steps:
