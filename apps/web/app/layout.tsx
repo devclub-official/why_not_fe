@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Why Not",
-  description: "일정관리 플랫폼",
+  title: 'Why Not',
+  description: '일정관리 플랫폼',
 };
 
 export default function RootLayout({
@@ -14,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="flex flex-col items-center min-h-screen max-w-lg mx-auto bg-white">
-        <main className="mx-auto max-w-md min-h-screen">
-          {children}
-        </main>
+        <main className="mx-auto max-w-md min-h-screen">{children}</main>
       </body>
     </html>
   );
