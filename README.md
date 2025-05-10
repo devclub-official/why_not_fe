@@ -32,6 +32,23 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+### Development Commands
+
+To get started with development and before PR, run the following commands:
+
+```bash
+yarn install
+yarn format
+yarn lint
+yarn build
+```
+
+### Command Details
+
+- `yarn format`: Formats all TypeScript and Markdown files using Prettier
+- `yarn lint`: Runs ESLint to check code quality and style
+- `yarn build`: Builds all apps and packages in the monorepo
+
 ### Build
 
 To build all apps and packages, run the following command:
